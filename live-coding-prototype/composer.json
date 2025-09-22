@@ -7,7 +7,9 @@
         }
     },
     "scripts": {
-        "convert":"php bin/convert.php"
+        "convert":"php bin/convert.php",
+        "shiftleft":"php bin/convert.php 42 --shl",
+        "shiftright":"php bin/convert.php 42 --shr"
     },
     "require": {
         "php":">=8.2"
