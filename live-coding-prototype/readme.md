@@ -47,10 +47,7 @@ Pads them to the same length → loops bit by bit → returns result.
 Performs **XOR** operation on two binary strings.  
 Pads them to the same length → loops bit by bit → returns result.
 
-### 6. `main()`
-- Asks user for two decimal numbers.  
-- Converts them to binary & hexadecimal.  
-- Shows results of bitwise operations.  
 
 ---
+
 
