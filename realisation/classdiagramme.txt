@@ -1,0 +1,67 @@
+┌──────────────────────────────────────────┐
+│             BitwiseInterface             │
+├──────────────────────────────────────────┤
+│ +calculate(op: string): int              │
+│ +applyShift(bits: int, dir: string): int │
+│ +cleanData(data: array): array           │
+└──────────────────────────────────────────┘
+        ▲
+        │ implements
+        │
+┌───────┴──────────────────────┐
+│           Calculator         │
+├──────────────────────────────┤
+│ -a: int                      │
+│ -b: int                      │
+│ -results: array              │
+├──────────────────────────────┤
+│ +__construct(a: int, b: int) │
+│ +andOp(): int                │
+│ +orOp(): int                 │
+│ +xorOp(): int                │
+│ +notOp(): int                │
+│ +shiftLeft(bits: int): int   │
+│ +shiftRight(bits: int): int  │
+└──────────────────────────────┘
+        ▲
+        │ implements
+        │
+┌───────┴─────────────────────┐
+│     PermissionsCalculator   │
+├─────────────────────────────┤
+│ -perms: int                 │
+├─────────────────────────────┤
+│ +__construct(perms: int)    │
+│ +setFlag(flag: int): int    │
+│ +unsetFlag(flag: int): int  │
+│ +checkFlag(flag: int): bool │
+└─────────────────────────────┘
+        ▲
+        │ uses
+┌───────┴───────────────────────────────────────┐
+│                BitwiseTrait                   │
+├───────────────────────────────────────────────┤
+│ -cleanData(data: array): array                │
+│ -shift(num: int, bits: int, dir: string): int │
+└───────────────────────────────────────────────┘
+        ▲
+        │ uses
+┌───────┴───────────────────────┐
+│           Converter           │
+├───────────────────────────────┤
+│ -number: int                  │
+├───────────────────────────────┤
+│ +__construct(number: int)     │
+│ +toBinary(): string           │
+│ +toHex(): string              │
+│ +fromBinary(bin: string): int │
+│ +fromHex(hex: string): int    │
+└───────────────────────────────┘
+
+Relationships:
+- Calculator implements BitwiseInterface
+- PermissionsCalcu lator implements BitwiseInterface
+- Calculator uses BitwiseTrait
+- PermissionsCalculator uses BitwiseTrait
+- Converter is standalone (no direct relationship to others, used by Calculator)
+- Helpers.php (not shown) is a standalone utility with closures/functions
